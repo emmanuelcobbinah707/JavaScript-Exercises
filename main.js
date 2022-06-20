@@ -260,8 +260,75 @@ console.log(closeTo100(69, 69));
 
 console.log('-----------------------');
 
+//Exercise 33 
+
+const inBetween = (int1, int2) => {
+
+// function inBetween(int1, int2) {
+ if(40 <= int1 && int1 <= 60 && 40 <= int2 && int2 <= 60 
+    ||
+    70 <= int1 && int1 <= 100 && 70 <= int2 && int2 <= 100) {
+     return(true);
+ } else {
+     return(false);
+ }
+}
+
+console.log(inBetween(45, 50));
+
+console.log('-----------------------');
+
+//Exercise 34
+
+const check_char = (str, char) => {
+    let ctr = 0; 
+
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) == char) {
+            ctr++;
+        }
+    }
+
+    if (ctr > 1 && ctr < 5) {
+        return(true);
+    } else {
+        return(false);
+    }
+}
+
+console.log(check_char("Python", "y"));
+console.log(check_char("JavaScript", "a"));
+console.log(check_char("Console", "o"));
+console.log(check_char("Console", "C"));
+console.log(check_char("Console", "e"));
+console.log(check_char("JavaScript", "S"));
+console.log(check_char("Hippopotamuspp", "p"));
+
+console.log('-----------------------');
 
 
+console.log('Flames_Application');
+
+function start_flames(str1, str2) {
+    let s1 = str1.split('');
+    let s2 = str2.split('');
+    let flames = ['Friends', 'Lovers', 'Admirers', 'Married', 'Enemies', 'Siblings'];
+    let count = 0;
+
+    for(let i = 0; i < s1.length; i++) {
+        
+        for(let o = 0; o < s2.length; o++) {
+            if( s2[o] == s1[i] ) {
+                count++;
+            }
+        }
+    }
+
+    let flameNo = count % 6;
+    return(flames[flameNo-1]);
+}
+
+console.log(start_flames('Sandra', 'Emmanuel'));
 
 
 
